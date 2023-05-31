@@ -1,0 +1,53 @@
+<h1>Liste des bilan</h1>
+<h2>Nombre de bilan : {{nbOffre}}</h2>
+
+<button type="button"
+  class="m-2 w-[200px] disabled:bg-slate-200 disabled:text-gray-400 bg-red-600 hover:bg-red-700 text-white p-2 px-8 rounded-lg disabled:font-normal font-bold uppercase disabled:shadow-none shadow-md text-sm"
+  (click)="calculeBilan()">Calculer</button>
+
+<!-- component -->
+<div class="flex flex-col">
+  <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
+    <div class="py-2 inline-block w-full sm:px-6 lg:px-8">
+      <div class="overflow-hidden p-12">
+        <table class="w-[90%] border border-gray-200 rounded-xl mx-auto shadow-xl">
+          <thead class="bg-white border-b rounded">
+            <tr>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Reference
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Titre
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Entreprise
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Etat
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="bg-gray-100 border-t" *ngFor="let emploi of list">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{emploi.titre}}</td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{emploi.entreprise}}</td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{emploi.reference}}</td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">{{emploi.etat}}</td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <button
+                  class=" min-w-[70%] disabled:bg-slate-200 disabled:text-gray-400 bg-red-600 hover:bg-red-700 text-white p-2 px-8 rounded-lg disabled:font-normal font-bold uppercase disabled:shadow-none shadow-md text-sm"
+                  (click)="onchangeEtat(emploi.reference)" [disabled]="!emploi.etat">
+                  {{ emploi.etat ? "Postuler": "Postulé" }}
+                </button>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

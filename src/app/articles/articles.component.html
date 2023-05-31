@@ -1,0 +1,27 @@
+<section id="products" class="m-2 mx-auto w-[90%] p-2">
+  <h1 class="font-sans font-bold text-3xl mb-4">{{ titre }}</h1>
+  <ul class="grid grid-cols-1 gap-4 list-none p-3">
+    <li *ngFor="let article of articles">
+        <fieldset *ngIf="article.categorie!='Travail'"
+          class="overflow-hidden rounded-lg border-gray-100 border-2 shadow-lg p-2">
+          <legend class="font-mono font-semibold text-red-600 ml-2">{{article.titre}}</legend>
+          <p class="flex flex-nowrap">
+            <span class="font-bold text-slate-600 block min-w-[100px]">Auteur:</span>{{article.auteur}}
+          </p>
+          <p class="flex flex-nowrap">
+            <span class="font-bold text-slate-600 block min-w-[100px]">Date:</span>{{article.date | date}}
+          </p>
+          <p class="flex flex-nowrap">
+            <span class="font-bold text-slate-600 block min-w-[100px]">Contenu:</span>{{article.contenu}}
+          </p>
+          <p class="flex flex-nowrap">
+            <span class="font-bold text-slate-600 block min-w-[100px]">Categorie:</span>{{article.categorie}}
+          </p>
+        </fieldset>
+    </li>
+
+  </ul>
+  <input type="number" name="price" placeholder="Price product" min={0}
+    class="w-[90%] max-w-sm rounded-xl  py-2 pl-3 pr-2 shadow-md focus:outline-none border-2 focus:border-red-600 border-gray-100 m-2 mb-6"
+    [(ngModel)]="number" (input)="limitArticleByNumber(number)" />
+</section>
