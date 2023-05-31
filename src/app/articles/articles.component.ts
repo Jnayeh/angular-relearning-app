@@ -107,6 +107,6 @@ export class ArticlesComponent implements OnInit {
     return this.articles.filter((a) => a.categorie != 'Travail').length;
   }
   limitArticleByNumber(number: number) {
-    this.articles= this.allArticles.filter((a) => a.categorie != 'Travail').slice(0,number);
+    this.articles= this.allArticles.slice(0,number);
   }
 }

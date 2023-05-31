@@ -3,7 +3,7 @@
   <ul class="grid grid-cols-1 gap-4 list-none p-3">
     <li *ngFor="let article of articles">
         <fieldset *ngIf="article.categorie!='Travail'"
-          class="overflow-hidden rounded-lg border-gray-100 border-2 shadow-lg p-2 {{ article.categorie == 'Education' ? 'bg-blue-50':''}}">
+          class="overflow-hidden rounded-lg border-gray-400 border-2 shadow-lg p-2 {{ article.categorie == 'Education' ? 'bg-blue-50':''}}">
           <legend class="font-mono font-semibold text-red-600 ml-2">{{article.titre}}</legend>
           <p class="flex flex-nowrap">
             <span class="font-bold text-slate-600 block min-w-[100px]">Auteur:</span>{{article.auteur}}
