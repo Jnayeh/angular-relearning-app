@@ -3,13 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FooterComponent } from './footer/footer.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { ProductsComponent } from './products/products.component';
-import { OffresEmploiComponent } from './offres-emploi/offres-emploi.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
-import { ArticlesComponent } from './articles/articles.component';
-import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { ProductsComponent } from './components/products/products.component';
+import { OffresEmploiComponent } from './components/offres-emploi/offres-emploi.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { ArticlesComponent } from './components/articles/articles.component';
+import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { UsersComponent } from './components/users/users.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { TemplateDrivenFormComponent } from './template-driven-form/template-dri
     OffresEmploiComponent,
     ProductDetailsComponent,
     ArticlesComponent,
-    TemplateDrivenFormComponent
+    TemplateDrivenFormComponent,
+    TodoListComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
