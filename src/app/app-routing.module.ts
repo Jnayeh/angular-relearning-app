@@ -4,6 +4,7 @@ import { ProductsComponent } from './products/products.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { OffresEmploiComponent } from './offres-emploi/offres-emploi.component';
 import { ArticlesComponent } from './articles/articles.component';
+import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
 
 const routes: Routes = [
   {path:'', redirectTo:"products", pathMatch:"full"},
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path:'product/:id', component: ProductDetailsComponent},
   {path:'offres', component: OffresEmploiComponent},
   {path:'articles', component: ArticlesComponent},
+  {path:'formulaire', component: TemplateDrivenFormComponent},
   {path:'**', component: OffresEmploiComponent}
 ];
 

@@ -1,0 +1,46 @@
+<form #form="ngForm" class="mx-auto w-[90%] max-w-[700px]">
+  <fieldset class="rounded-lg border border-red-600 pl-4 ">
+    <legend>Infomations générales</legend>
+
+    <span class="font-bold text-slate-600 inline-block min-w-[120px]">Nom:</span>
+    <input
+      class=" max-w-sm rounded-xl  py-2 min-w-[calc(100%-122px-1rem)] sm:min-w-[225px] pl-3 pr-2 shadow-sm focus:outline-none border-2 focus:border-red-600 border-gray-100 m-2"
+      name="name" required [(ngModel)]="formModel.name" #name="ngModel" />
+    <br>
+    <span class="font-bold text-slate-600 inline-block min-w-[120px]">Email:</span>
+    <input
+      class=" max-w-sm rounded-xl  py-2 min-w-[calc(100%-122px-1rem)] sm:min-w-[225px] pl-3 pr-2 shadow-sm focus:outline-none border-2 focus:border-red-600 border-gray-100 m-2"
+      name="email" required pattern="^[a-zA-Z0-9.-]+\.[a-zA-Z0-9._%+-]+@[a-zA-Z]{3}$" [(ngModel)]="formModel.email"
+      #email="ngModel" />
+    <fieldset class="rounded-lg border border-slate-400 mx-auto w-[98%] sm:pr-2 pl-4 ">
+      <legend>Infomations de payement</legend>
+      <br>
+      <span class="font-bold text-slate-600 inline-block min-w-[120px]">Type de carte:</span>
+      <input
+        class=" max-w-sm rounded-xl  py-2 min-w-[calc(100%-122px-1rem)] sm:min-w-[225px] pl-3 pr-2 shadow-sm focus:outline-none border-2 focus:border-red-600 border-gray-100 m-2"
+        name="type" required [(ngModel)]="formModel.type" #type="ngModel" />
+      <br>
+      <span class="font-bold text-slate-600 inline-block min-w-[120px]">Numéro carte:</span>
+      <input
+        class=" max-w-sm rounded-xl  py-2 min-w-[calc(100%-122px-1rem)] sm:min-w-[225px] pl-3 pr-2 shadow-sm focus:outline-none border-2 focus:border-red-600 border-gray-100 m-2"
+        name="num" type="number" required pattern="^[\d]{3}$" [(ngModel)]="formModel.num" #num="ngModel" />
+      <br>
+      <span class="font-bold text-slate-600 inline-block min-w-[120px]">Date expiration:</span>
+      <input
+        class=" max-w-sm rounded-xl  py-2 min-w-[calc(100%-122px-1rem)] sm:min-w-[225px] pl-3 pr-2 shadow-sm focus:outline-none border-2 focus:border-red-600 border-gray-100 m-2"
+        name="date" type="date" required [(ngModel)]="formModel.date" #date="ngModel" />
+      <br>
+      <ng-template [ngIf]="type.valid && num.valid && date.valid">
+        <span class="font-bold text-slate-600 inline-block min-w-[120px]">Code:</span>
+        <input
+          class=" max-w-sm rounded-xl  py-2 min-w-[calc(100%-122px-1rem)] sm:min-w-[225px] pl-3 pr-2 shadow-sm focus:outline-none border-2 focus:border-red-600 border-gray-100 m-2"
+          name="code" type="number" [(ngModel)]="formModel.code" #code="ngModel" />
+      </ng-template>
+
+    </fieldset>
+    <button
+      class=" w-[30%] flex-shrink disabled:bg-slate-200 disabled:text-gray-400 bg-red-600 hover:bg-red-700 text-white p-2 m-2 text-center rounded-lg disabled:font-normal font-bold uppercase disabled:shadow-none shadow-md text-sm"
+      [disabled]="form.invalid"> Add </button>
+  </fieldset>
+
+</form>
