@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'articles', component: ArticlesComponent },
   { path: 'formulaire', component: TemplateDrivenFormComponent },
   { path: 'todos', component: TodoListComponent },
+  { path: 'todos/:id', component: TodoListComponent },
   { path: 'users', component: UsersComponent },
   { path: '**', component: OffresEmploiComponent },
 ];

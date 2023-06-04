@@ -10,17 +10,24 @@
   <h2 *ngIf="nb_repeated !=null" class="font-mono font-bold ml-2">Username repeated : {{nb_repeated}}</h2>
 
   <ul class="grid grid-cols-1 gap-4 list-none p-3">
-    <li *ngFor="let user of listUsers" class="overflow-hidden rounded-lg border-gray-200 border-2 shadow-md p-2">
-      <p class="flex flex-nowrap">
-        <span class="font-bold text-slate-600 block min-w-[100px]">Nom: </span>{{user.name}}
-      </p>
-      <p class="flex flex-nowrap">
-        <span class="font-bold text-slate-600 block min-w-[100px]">Username: </span>{{user.username}}
-      </p>
-      <p class="flex flex-nowrap">
-        <span class="font-bold text-slate-600 block min-w-[100px]">Email: </span>{{user.email}}
-      </p>
-
+    <li *ngFor="let user of listUsers" class="overflow-hidden rounded-lg bg-gray-200 shadow-md flex justify-between">
+      <div class="min-w-[60px] bg-blue-900 text-slate-50 font-bold flex justify-center">
+        <p class="self-center">{{ user.id }}</p>
+      </div>
+      <div class=" p-2 pl-6">
+        <p class="flex flex-nowrap">
+          <span class="font-bold text-slate-600 block min-w-[100px]">Nom: </span>{{user.name}}
+        </p>
+        <p class="flex flex-nowrap">
+          <span class="font-bold text-slate-600 block min-w-[100px]">Username: </span>{{user.username}}
+        </p>
+        <p class="flex flex-nowrap">
+          <span class="font-bold text-slate-600 block min-w-[100px]">Email: </span>{{user.email}}
+        </p>
+      </div>
+      <div class="min-w-[150px] bg-blue-500 text-slate-50 font-bold flex justify-center">
+        <a class="self-center" [routerLink]="['/todos',user.id]">Voir todos</a>
+      </div>
     </li>
   </ul>
 </section>

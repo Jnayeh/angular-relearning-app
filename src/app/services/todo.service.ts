@@ -11,4 +11,9 @@ export class TodoService {
   getTodos(): Observable<Todo[]> {
     return this.http.get<Todo[]>('https://jsonplaceholder.typicode.com/todos');
   }
+  getTodosByUserId(id: number): Observable<Todo[]> {
+    return this.http.get<Todo[]>(
+      'https://jsonplaceholder.typicode.com/todos?userId=' + id
+    );
+  }
 }
