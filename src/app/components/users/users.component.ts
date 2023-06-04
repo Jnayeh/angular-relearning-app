@@ -11,7 +11,7 @@ export class UsersComponent implements OnInit {
   constructor(private calcSer: CalculService) {}
   listUsers: User[] = [];
   nb_repeated!: number;
-  user_verif!: string;
+  user_verif: string = '';
   ngOnInit(): void {
     this.listUsers = [
       {
