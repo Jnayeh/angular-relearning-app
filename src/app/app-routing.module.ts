@@ -6,6 +6,7 @@ import { OffresEmploiComponent } from './components/offres-emploi/offres-emploi.
 import { ArticlesComponent } from './components/articles/articles.component';
 import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { UsersComponent } from './components/users/users.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'products', pathMatch: 'full' },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'articles', component: ArticlesComponent },
   { path: 'formulaire', component: TemplateDrivenFormComponent },
   { path: 'todos', component: TodoListComponent },
+  { path: 'users', component: UsersComponent },
   { path: '**', component: OffresEmploiComponent },
 ];
 
