@@ -9,15 +9,20 @@
   <h2 *ngIf="nb_completed !=null" class="font-mono font-bold ml-2">Todos completed : {{nb_completed}}/{{ todolist.length }}</h2>
 
   <ul class="grid grid-cols-1 gap-4 list-none p-3">
-    <li *ngFor="let todo of todolist" class="overflow-hidden rounded-lg border-gray-400 border-2 shadow-lg p-2">
-      <p class="flex flex-nowrap">
-        <span class="font-bold text-slate-600 block min-w-[100px]">Titre: </span>{{todo.title}}
-      </p>
+    <li *ngFor="let todo of todolist" class="overflow-hidden rounded-lg border-gray-400 bg-slate-100 drop-shadow-lg flex">
+      <div class="min-w-[60px] bg-slate-500 text-slate-50 font-bold flex justify-center">
+        <p class="self-center">{{ todo.id }}</p>
+      </div>
+      <div class=" p-2 pl-4">
+        <p class="flex flex-nowrap">
+          <span class="font-bold text-slate-600 block min-w-[100px]">Titre: </span>{{todo.title}}
+        </p>
 
-      <div class="flex flex-nowrap">
-        <span class="font-bold text-slate-600 inline-block min-w-[100px]">Completed:</span>
-        <input type="checkbox" id="toggle" [checked]="todo.completed"
-          [disabled]="todo.completed">
+        <div class="flex flex-nowrap">
+          <span class="font-bold text-slate-600 inline-block min-w-[100px]">Completed:</span>
+          <input type="checkbox" id="toggle" [checked]="todo.completed"
+            [disabled]="todo.completed">
+        </div>
       </div>
     </li>
   </ul>

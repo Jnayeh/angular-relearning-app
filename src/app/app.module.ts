@@ -12,6 +12,7 @@ import { ArticlesComponent } from './components/articles/articles.component';
 import { TemplateDrivenFormComponent } from './components/template-driven-form/template-driven-form.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { UsersComponent } from './components/users/users.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UsersComponent } from './components/users/users.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
