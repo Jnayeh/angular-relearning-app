@@ -21,12 +21,16 @@ export class TodoListComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.activeRoute.snapshot.params['id'];
     if (this.id == null) {
-      this.todoSer.getTodos().subscribe((data: Todo[]) => {
-        this.todolist = data;
+      this.todoSer.getTodos().subscribe({
+        next: (data: Todo[]) => {
+          this.todolist = data;
+        },
       });
     } else {
-      this.todoSer.getTodosByUserId(this.id).subscribe((data: Todo[]) => {
-        this.todolist = data;
+      this.todoSer.getTodosByUserId(this.id).subscribe({
+        next: (data: Todo[]) => {
+          this.todolist = data;
+        },
       });
     }
   }
